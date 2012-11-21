@@ -7,7 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "MIScrollView.h"
 
-@interface MIViewController : UIViewController
+#define kGOOGLE_API_KEY @"AIzaSyDa9tkUwbFqU6q15t-W0q50kFSdzURvrF0"
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+@interface MIViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate,UISearchBarDelegate,UITextFieldDelegate>
+{
 
+    CLLocationManager *locationManager;
+    CLLocationCoordinate2D currentCentre;
+    int currenDist;
+    BOOL firstLaunch;
+}
+@property (strong, nonatomic) UITextField *toField;
+@property (strong, nonatomic) UITextField *fromField;
+@property (strong, nonatomic) UIToolbar *dirBar;
+@property (strong, nonatomic) UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet MIScrollView *scrollView;
+@property (strong, nonatomic) NSString *query;
+@property (strong, nonatomic) NSMutableDictionary *refDictionary;
 @end

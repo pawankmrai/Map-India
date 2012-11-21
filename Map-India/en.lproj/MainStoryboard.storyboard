@@ -1,24 +1,354 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="EKQ-GM-7uc">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="l2C-kX-0WR">
+            <objects>
+                <tableViewController id="pvY-GP-BJ2" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aQh-YH-0Du">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="KiY-en-VtK">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pvY-GP-BJ2" id="KdL-q8-KOk"/>
+                            <outlet property="delegate" destination="pvY-GP-BJ2" id="dMa-5F-A1E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bu2-aR-ztN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zej-Oc-oK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-483" y="562"/>
+        </scene>
+        <!--Map Data View Controller - All-Category-->
+        <scene sceneID="Lht-nu-LRJ">
+            <objects>
+                <tableViewController id="cAa-hG-Z0z" customClass="MIMapDataViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="E4E-wB-FmT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="cap-9h-OnT">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="cAa-hG-Z0z" id="khz-Zd-TSQ"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="53" id="mRU-dp-COG">
+                                <rect key="frame" x="0.0" y="80" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="280" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cAa-hG-Z0z" id="8kc-ij-P5i"/>
+                            <outlet property="delegate" destination="cAa-hG-Z0z" id="atc-py-mpO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="All-Category" id="NQt-Zb-qNX"/>
+                    <connections>
+                        <outlet property="dataSearchBar" destination="cap-9h-OnT" id="XhW-aw-fyS"/>
+                        <outlet property="searchDisplayController" destination="Kbs-Ac-3Fr" id="rra-NM-Y4K"/>
+                        <segue destination="2" kind="push" identifier="mapDetail" id="Lzf-do-MDO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51h-x3-P5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Kbs-Ac-3Fr">
+                    <connections>
+                        <outlet property="delegate" destination="cAa-hG-Z0z" id="fYp-ay-0Nf"/>
+                        <outlet property="searchBar" destination="cap-9h-OnT" id="Nwk-iI-JzX"/>
+                        <outlet property="searchContentsController" destination="cAa-hG-Z0z" id="Byj-yU-v6V"/>
+                        <outlet property="searchResultsDataSource" destination="cAa-hG-Z0z" id="hhb-7Y-8B8"/>
+                        <outlet property="searchResultsDelegate" destination="cAa-hG-Z0z" id="spK-Mn-5R7"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-483" y="-66"/>
+        </scene>
+        <!--Get Location View Controller - Location-->
+        <scene sceneID="ITg-xJ-4wc">
+            <objects>
+                <tableViewController id="Qpg-IN-3f1" customClass="MIGetLocationViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rRH-EM-gkD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="HyU-wR-Hne">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Qpg-IN-3f1" id="1lh-Gu-cO2"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="IaC-eT-WI1">
+                                <rect key="frame" x="0.0" y="80" width="320" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qpg-IN-3f1" id="jby-u1-gle"/>
+                            <outlet property="delegate" destination="Qpg-IN-3f1" id="r5E-Se-bOr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Location" id="1DD-GX-Vb4"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="HyU-wR-Hne" id="Mw9-n8-8Ug"/>
+                        <outlet property="searchDisplayController" destination="B84-as-oSB" id="gb2-Ez-n79"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pc3-4p-lTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController searchResultsTitle="Search Detail" id="B84-as-oSB">
+                    <connections>
+                        <outlet property="delegate" destination="Qpg-IN-3f1" id="s8P-gO-gDI"/>
+                        <outlet property="searchBar" destination="HyU-wR-Hne" id="oN4-Rx-chs"/>
+                        <outlet property="searchContentsController" destination="Qpg-IN-3f1" id="WuU-RI-1nt"/>
+                        <outlet property="searchResultsDataSource" destination="Qpg-IN-3f1" id="Z5p-Aq-YGU"/>
+                        <outlet property="searchResultsDelegate" destination="Qpg-IN-3f1" id="guM-5Q-1eS"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-483" y="-721"/>
+        </scene>
+        <!--Home View Controller - Map-All-->
+        <scene sceneID="kHc-Yg-rOu">
+            <objects>
+                <tableViewController id="XrX-w1-kvx" customClass="MIHomeViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="xJa-ff-BZ2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="XrX-w1-kvx" id="lKp-n7-QI2"/>
+                            <outlet property="delegate" destination="XrX-w1-kvx" id="C8T-Ou-XGg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Map-All" id="aTm-RE-0VE">
+                        <barButtonItem key="leftBarButtonItem" image="setting.png" id="DDZ-Vy-zuw">
+                            <connections>
+                                <segue destination="pvY-GP-BJ2" kind="push" identifier="settingVIew" id="gmy-ef-fFv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icon_currentLocation.png" id="F0Q-W2-q4o">
+                            <connections>
+                                <segue destination="Qpg-IN-3f1" kind="push" id="ZzU-6x-yo4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="geoCoder" destination="cYd-Sd-UfS" id="oZk-4i-oep"/>
+                        <outlet property="locationManager" destination="zTo-Cm-P2p" id="PQg-uQ-msL"/>
+                        <segue destination="cAa-hG-Z0z" kind="push" identifier="categoryView" id="oU6-sn-Dec"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGx-c2-iIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="zTo-Cm-P2p" customClass="CLLocationManager"/>
+                <customObject id="cYd-Sd-UfS" customClass="CLGeocoder"/>
+            </objects>
+            <point key="canvasLocation" x="-1152" y="-103"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tao-mQ-6D6">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="EKQ-GM-7uc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="ghi-p9-NDk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XrX-w1-kvx" kind="relationship" relationship="rootViewController" id="nej-Bh-YK6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3DK-Fl-yeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1632" y="-214"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="MIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="AZb-IB-NpR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="fjV-1E-nHa" customClass="MIScrollView">
+                                <rect key="frame" x="0.0" y="366" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="4Fv-1N-wYk"/>
+                                </connections>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="oJw-S1-Sqi">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GrG-bJ-gJK"/>
+                                    <barButtonItem title="Setting" width="54" id="Oiy-De-2DR">
+                                        <connections>
+                                            <segue destination="Qnf-7a-Gn0" kind="modal" id="awV-JC-vmm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="  Related Searches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontSizeToFit="NO" id="gbO-u9-plr">
+                                <rect key="frame" x="0.0" y="347" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A1n-uM-O1H">
+                        <barButtonItem key="rightBarButtonItem" image="location_map.png" id="gHq-69-Nau"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="AZb-IB-NpR" id="MRr-E3-Tjn"/>
+                        <outlet property="scrollView" destination="fjV-1E-nHa" id="3uJ-Mh-B5q"/>
+                        <segue destination="QT4-sJ-8ij" kind="push" identifier="detailView" id="vML-W5-92V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="-257"/>
+        </scene>
+        <!--Annotation Detail View Controller-->
+        <scene sceneID="0YO-7D-pzG">
+            <objects>
+                <tableViewController id="QT4-sJ-8ij" customClass="MIAnnotationDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mfw-ss-Szv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="QT4-sJ-8ij" id="mXR-pU-DwE"/>
+                            <outlet property="delegate" destination="QT4-sJ-8ij" id="PZo-bR-tSD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="84o-tx-g8h">
+                        <barButtonItem key="rightBarButtonItem" image="direction.png" id="Ez2-vI-zcn"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6r-bW-W2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="109"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="5fu-BI-xw2">
+            <objects>
+                <viewController id="Qnf-7a-Gn0" customClass="MISettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FlF-Bh-JPG">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="ALw-Mr-Zch">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Setting" id="pz6-gV-OUP">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ob0-vb-Lnn">
+                                            <connections>
+                                                <action selector="donePress:" destination="Qnf-7a-Gn0" id="ZhB-eT-2Yo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwJ-4H-k6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="659" y="-657"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="direction.png" width="23" height="23"/>
+        <image name="icon_currentLocation.png" width="23" height="23"/>
+        <image name="location_map.png" width="23" height="23"/>
+        <image name="setting.png" width="23" height="23"/>
+    </resources>
+    <classes>
+        <class className="CLGeocoder" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLGeocoder.h"/>
+        </class>
+        <class className="CLLocationManager" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
+        </class>
+        <class className="MIAnnotationDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIAnnotationDetailViewController.h"/>
+        </class>
+        <class className="MIGetLocationViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIGetLocationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="MIHomeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="geoCoder" candidateClass="CLGeocoder"/>
+                <relationship kind="outlet" name="locationManager" candidateClass="CLLocationManager"/>
+            </relationships>
+        </class>
+        <class className="MIMapDataViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIMapDataViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="MIScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIScrollView.h"/>
+        </class>
+        <class className="MISettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MISettingViewController.h"/>
+        </class>
+        <class className="MIViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="directionInterface:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="MIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

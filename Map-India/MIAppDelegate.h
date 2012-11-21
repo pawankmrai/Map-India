@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface MIAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSString *globalLattitude;
+    NSString *globalLongitude;
+}
 
+
+@property(strong,nonatomic) NSString *globalLattitude;
+@property(strong,nonatomic) NSString *globalLongitude;
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) NSArray *filteredArray;
+@property (strong, nonatomic) NSString *refKeyGB;
+@property (strong, nonatomic) NSString *rowTitle;
+@property (strong, nonatomic) NSString *locationTitle;
 @end

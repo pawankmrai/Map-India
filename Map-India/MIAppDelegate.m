@@ -11,6 +11,11 @@
 @implementation MIAppDelegate
 
 @synthesize window = _window;
+@synthesize filteredArray=_filteredArray;
+@synthesize refKeyGB=_refKeyGB;
+@synthesize rowTitle=_rowTitle;
+@synthesize locationTitle=_locationTitle;
+@synthesize globalLattitude,globalLongitude;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
