@@ -43,7 +43,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSString *urlString=[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?reference=%@&sensor=true&key=%@",delegate.refKeyGB,kGOOGLE_API_KEY];
+    NSString *urlString=[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?reference=%@&sensor=true&key=%@",delegate.refKeyGB,kGOOGLE_API_KEY1];
     NSURL *refURL=[NSURL URLWithString:urlString];
     //NSLog(@"url---%@",refURL);
     dispatch_async(kBgQueue, ^{
@@ -234,7 +234,7 @@
               MIAnnotationClass *obj=(MIAnnotationClass *)[_detailArray objectAtIndex:0];
               NSLog(@"website---%@",obj.website);
               if (obj.website!=nil) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:obj.website]]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",obj.website]]];
              }
              else {
                 [[[UIAlertView alloc] initWithTitle:@"Message" message:@"Link is Not Valid" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];

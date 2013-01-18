@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+
 @class MIAppDelegate;
 @interface MIHomeViewController : UITableViewController<CLLocationManagerDelegate>
 {

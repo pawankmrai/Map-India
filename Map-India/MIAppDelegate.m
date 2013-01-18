@@ -7,7 +7,7 @@
 //
 
 #import "MIAppDelegate.h"
-
+#import <Parse/Parse.h>
 @implementation MIAppDelegate
 
 @synthesize window = _window;
@@ -20,6 +20,41 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+    [Parse setApplicationId:@"wPdcYRS7SzSUiG8mjlNlp0Hpo4qSE2pmspIVkPbo"
+                  clientKey:@"cnqrFS9oFHBj4A1uRMz82Bj3jubGYoMwWB7jO96T"];
+    
+    //////////send info for installation to parse.com  dashboard////////////
+    
+    PFInstallation *currentInstallation=[PFInstallation currentInstallation];
+    if (currentInstallation.badge!=0) {
+        
+        currentInstallation.badge=0;
+        [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        
+            if (succeeded) {
+                
+                NSLog(@"device registered to dashboard");
+            }
+            if (error) {
+                [currentInstallation saveEventually];
+            }
+        }];
+    }
+    /////////////////////////////////////////
+    
+    //////////////checking for user in cached memory////////////////
+    PFUser *user=[PFUser currentUser];
+    if (user) {
+        NSLog(@"user log in!!!!");
+    }
+    else{
+    
+        NSLog(@"go for login");
+    }
+    
+
     return YES;
 }
 							
