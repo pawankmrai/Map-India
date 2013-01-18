@@ -424,6 +424,7 @@
         <class className="MISettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MISettingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="signIN:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="userField" candidateClass="UITextField"/>
