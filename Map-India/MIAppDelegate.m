@@ -57,6 +57,16 @@
 
     return YES;
 }
+//  method to be called when the location changes.
+// This is where we post the notification to all observers.
+- (void)setCurrentLocation:(CLLocation *)aCurrentLocation
+{
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject: aCurrentLocation
+                                                         forKey:@"location"];
+    [[NSNotificationCenter defaultCenter] postNotificationName: kPAWLocationChangeNotification
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

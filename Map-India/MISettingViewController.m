@@ -89,6 +89,8 @@
 #pragma mark Field validation
 
 - (void)processFieldEntries {
+    
+    
 	// Get the username text, store it in the app delegate for now
 	NSString *username = userField.text;
 	NSString *password = passwordField.text;
@@ -145,38 +147,53 @@
     
 	[self.view addSubview:activityView];
     
-	[PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
-		// Tear down the activity view in all cases.
-		[activityView.activityIndicator stopAnimating];
-		[activityView removeFromSuperview];
+    NSLog(@"email varified detail----%@",[[PFUser currentUser] objectForKey:@"emailVerified"]);
+    
+    
         
-		if (user) {
+       
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+            // Tear down the activity view in all cases.
+            [activityView.activityIndicator stopAnimating];
+            [activityView removeFromSuperview];
             
-            [self.navigationController popViewControllerAnimated:YES];
-            
-		} else {
-			// Didn't get a user.
-			NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
-            
-			// Re-enable the done button if we're tossing them back into the form.
-			loginButton.enabled = [self shouldEnableDoneButton];
-			UIAlertView *alertView = nil;
-            
-			if (error == nil) {
-				// the username or password is probably wrong.
-				alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-			} else {
-				// Something else went horribly wrong:
-				alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-			}
-			[alertView show];
-			// Bring the keyboard back up, because they'll probably need to change something.
-			[userField becomeFirstResponder];
-		}
-	}];
-}
-
-
+            if (user) {
+                if ([[user objectForKey:@"emailVerified"] boolValue]==1) {
+                    
+                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                }
+                else{
+                
+                    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Waring" message:@"Please verify email first" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+                    [alert show];
+                    
+                    [userField becomeFirstResponder];
+                }
+                
+            } else {
+                // Didn't get a user.
+                NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
+                
+                // Re-enable the done button if we're tossing them back into the form.
+                loginButton.enabled = [self shouldEnableDoneButton];
+                UIAlertView *alertView = nil;
+                
+                if (error == nil) {
+                    // the username or password is probably wrong.
+                    alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                } else {
+                    // Something else went horribly wrong:
+                    alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                }
+                [alertView show];
+                // Bring the keyboard back up, because they'll probably need to change something.
+                [userField becomeFirstResponder];
+            }
+        }];        
+    
+    
+	}
 
 - (void)viewDidUnload
 {

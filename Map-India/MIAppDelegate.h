@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+/////constant string for location change notification
+static NSString* const kPAWLocationChangeNotification= @"kPAWLocationChangeNotification";
+
 
 @interface MIAppDelegate : UIResponder <UIApplicationDelegate>
 {
