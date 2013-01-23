@@ -54,6 +54,19 @@
         NSLog(@"go for login");
     }
     
+    /////////facebook Authentication area////////////
+    
+    [PFFacebookUtils initializeWithApplicationId:@"246113772189085"];
+    
+    
+    ///////////////////////////////////////////////////
+    
+    /////////////////twitter Authentication area////////////////
+    
+    [PFTwitterUtils initializeWithConsumerKey:@"yop2S36xBQanm4lk9iD94w"
+                               consumerSecret:@"IyDWKeJLtucyUOulRDKeIY7Us116HjiLRpTF2m8"];
+    
+    ////////////////////////////////////////////////////////
 
     return YES;
 }
@@ -67,7 +80,16 @@
                                                         object:nil
                                                       userInfo:userInfo];
 }
-							
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

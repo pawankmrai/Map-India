@@ -18,6 +18,7 @@
 		0649FDA61600C21B00A16AC5 /* MISettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0649FDA51600C21B00A16AC5 /* MISettingViewController.m */; };
 		0657A41416087CD900DA5B63 /* MIGetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0657A41316087CD900DA5B63 /* MIGetLocationViewController.m */; };
 		066EF09A163957C9002F9108 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 066EF099163957C9002F9108 /* Default-568h@2x.png */; };
+		067A4AB716AE659100D0909C /* MILogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 067A4AB616AE659100D0909C /* MILogoutViewController.m */; };
 		068220A11608961500760D2F /* MILocationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 068220A01608961500760D2F /* MILocationClass.m */; };
 		0686432216A9650900FDF94D /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0686432116A9650900FDF94D /* PAWActivityView.m */; };
 		068B876F160C4BE3003D655F /* icon_currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 068B876E160C4BE3003D655F /* icon_currentLocation.png */; };
@@ -87,6 +88,8 @@
 		0657A41216087CD900DA5B63 /* MIGetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIGetLocationViewController.h; sourceTree = "<group>"; };
 		0657A41316087CD900DA5B63 /* MIGetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIGetLocationViewController.m; sourceTree = "<group>"; };
 		066EF099163957C9002F9108 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		067A4AB516AE659100D0909C /* MILogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILogoutViewController.h; sourceTree = "<group>"; };
+		067A4AB616AE659100D0909C /* MILogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILogoutViewController.m; sourceTree = "<group>"; };
 		0682209F1608961500760D2F /* MILocationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MILocationClass.h; sourceTree = "<group>"; };
 		068220A01608961500760D2F /* MILocationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MILocationClass.m; sourceTree = "<group>"; };
 		0686432016A9650900FDF94D /* PAWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWActivityView.h; sourceTree = "<group>"; };
@@ -275,6 +278,15 @@
 			name = "Location Get";
 			sourceTree = "<group>";
 		};
+		067A4AB316AE655A00D0909C /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				067A4AB516AE659100D0909C /* MILogoutViewController.h */,
+				067A4AB616AE659100D0909C /* MILogoutViewController.m */,
+			);
+			name = Logout;
+			sourceTree = "<group>";
+		};
 		0686431E16A964F500FDF94D /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,17 +395,18 @@
 		06E0EAD71600589E00185617 /* Map-India */ = {
 			isa = PBXGroup;
 			children = (
-				069D818416A9554E004605E1 /* Avoid KeyBoard */,
+				061FAA8716009FA8001F8883 /* Home-Delegate */,
 				069D817F16A92A9A004605E1 /* Storyboard */,
+				069D818416A9554E004605E1 /* Avoid KeyBoard */,
 				069D816316A92808004605E1 /* Parse Files */,
 				0657A41016087C9700DA5B63 /* Location Get */,
 				0625D1BD1604671600D239BF /* Annotation Deatail */,
 				06CE761D1602FFEF005916DA /* Map-Data */,
 				0608C2E11601DFA400E63E7B /* Search */,
+				067A4AB316AE655A00D0909C /* Logout */,
 				0649FDA21600C1ED00A16AC5 /* Setting */,
 				061FAA8916009FE2001F8883 /* scroll */,
 				06F03341160845F20016905A /* All-Category */,
-				061FAA8716009FA8001F8883 /* Home-Delegate */,
 				061FAA8516009F8D001F8883 /* Map-Point */,
 				061FAA8816009FC7001F8883 /* resource */,
 				06E0EAD81600589E00185617 /* Supporting Files */,
@@ -522,6 +535,7 @@
 				069D818716A95570004605E1 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				069D818C16A95FA8004605E1 /* MISignUPViewController.m in Sources */,
 				0686432216A9650900FDF94D /* PAWActivityView.m in Sources */,
+				067A4AB716AE659100D0909C /* MILogoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,8 +567,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Grote (QW2LRUS3PF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Grote (QW2LRUS3PF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -569,8 +583,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PROVISIONING_PROFILE = "E558D70E-2843-4433-91EF-305193CB83A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E558D70E-2843-4433-91EF-305193CB83A5";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -582,8 +596,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Grote (QW2LRUS3PF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Grote (QW2LRUS3PF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -592,8 +606,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "E558D70E-2843-4433-91EF-305193CB83A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E558D70E-2843-4433-91EF-305193CB83A5";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -612,8 +626,8 @@
 				GCC_PREFIX_HEADER = "Map-India/Map-India-Prefix.pch";
 				INFOPLIST_FILE = "Map-India/Map-India-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E558D70E-2843-4433-91EF-305193CB83A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E558D70E-2843-4433-91EF-305193CB83A5";
+				PROVISIONING_PROFILE = "0529CADB-1E8B-4A46-921B-ADCFF7E5E602";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0529CADB-1E8B-4A46-921B-ADCFF7E5E602";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -631,8 +645,8 @@
 				GCC_PREFIX_HEADER = "Map-India/Map-India-Prefix.pch";
 				INFOPLIST_FILE = "Map-India/Map-India-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E558D70E-2843-4433-91EF-305193CB83A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E558D70E-2843-4433-91EF-305193CB83A5";
+				PROVISIONING_PROFILE = "0529CADB-1E8B-4A46-921B-ADCFF7E5E602";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0529CADB-1E8B-4A46-921B-ADCFF7E5E602";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -177,8 +177,8 @@ showDialog:
 		[activityView.activityIndicator stopAnimating];
 		[activityView removeFromSuperview];
         
-		
-		[self.navigationController popViewControllerAnimated:YES];
+		[self performSegueWithIdentifier:@"signupsuccessfull" sender:user];
+		//[self.navigationController popViewControllerAnimated:YES];
 	}];
 }
 #pragma mark - UITextField text field change notifications and helper methods

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="EKQ-GM-7uc">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
@@ -57,6 +56,38 @@
             </objects>
             <point key="canvasLocation" x="-483" y="-66"/>
         </scene>
+        <!--Logout View Controller - Logout-->
+        <scene sceneID="rFk-Mr-pyf">
+            <objects>
+                <viewController id="Oca-hH-1Lq" customClass="MILogoutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yzv-WO-78W">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GE4-eD-cBQ">
+                                <rect key="frame" x="49" y="60" width="222" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="Oca-hH-1Lq" eventType="touchUpInside" id="wiv-t5-FMk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Logout" id="JSX-HV-YAu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtW-Eh-uPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-483" y="541"/>
+        </scene>
         <!--Setting View Controller - Setting-->
         <scene sceneID="Sai-96-TTa">
             <objects>
@@ -70,7 +101,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="user name" minimumFontSize="17" clearButtonMode="whileEditing" id="zdK-LM-IDz">
-                                        <rect key="frame" x="55" y="109" width="211" height="30"/>
+                                        <rect key="frame" x="55" y="84" width="211" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -79,7 +110,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" minimumFontSize="17" clearButtonMode="whileEditing" id="y3S-pe-wUD">
-                                        <rect key="frame" x="55" y="162" width="211" height="30"/>
+                                        <rect key="frame" x="55" y="137" width="211" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -88,7 +119,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NN2-Qf-bFe">
-                                        <rect key="frame" x="55" y="255" width="211" height="33"/>
+                                        <rect key="frame" x="55" y="230" width="211" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Sign up ">
@@ -103,12 +134,49 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="don't have account ? create one" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VT1-B2-8rf">
-                                        <rect key="frame" x="55" y="215" width="211" height="30"/>
+                                        <rect key="frame" x="55" y="190" width="211" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                         <color key="textColor" red="0.052953603316326481" green="0.052953603316326481" blue="0.052953603316326481" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="you can also login with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GQ9-mi-gNC">
+                                        <rect key="frame" x="55" y="280" width="211" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.052953603320000001" green="0.052953603320000001" blue="0.052953603320000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4cp-oP-Fz6">
+                                        <rect key="frame" x="4" y="320" width="150" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Login with facebook">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebooklogin:" destination="KGZ-l8-KWL" eventType="touchUpInside" id="K8W-Ov-uLJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o6N-fE-fED">
+                                        <rect key="frame" x="164" y="320" width="150" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Login with twitter">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twitterlogin:" destination="KGZ-l8-KWL" eventType="touchUpInside" id="H7j-iB-rSV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -126,11 +194,12 @@
                         <outlet property="loginButton" destination="dHR-Bw-Nzy" id="Uu3-4X-Y7e"/>
                         <outlet property="passwordField" destination="y3S-pe-wUD" id="ocJ-ja-H6u"/>
                         <outlet property="userField" destination="zdK-LM-IDz" id="Kum-14-gHe"/>
+                        <segue destination="XrX-w1-kvx" kind="push" identifier="loginsuccessfull" id="2Ax-r8-tCV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="668-b5-nbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="541"/>
+            <point key="canvasLocation" x="-2411" y="-103"/>
         </scene>
         <!--SignUP View Controller - Sign Up-->
         <scene sceneID="z9t-6N-4bw">
@@ -198,11 +267,12 @@
                         <outlet property="passwordField" destination="vHb-gd-O34" id="WUc-Jb-91Q"/>
                         <outlet property="repasswordField" destination="eSQ-lr-0WF" id="siX-JJ-e47"/>
                         <outlet property="userField" destination="Vh7-00-DLo" id="gbc-HG-f9q"/>
+                        <segue destination="XrX-w1-kvx" kind="push" identifier="signupsuccessfull" id="JcN-tN-1Ux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jP0-ac-CwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8" y="541"/>
+            <point key="canvasLocation" x="-1776" y="485"/>
         </scene>
         <!--Get Location View Controller - Location-->
         <scene sceneID="ITg-xJ-4wc">
@@ -272,7 +342,7 @@
                     <navigationItem key="navigationItem" title="Map-All" id="aTm-RE-0VE">
                         <barButtonItem key="leftBarButtonItem" image="setting.png" id="DDZ-Vy-zuw">
                             <connections>
-                                <segue destination="KGZ-l8-KWL" kind="push" id="84G-4m-jW6"/>
+                                <segue destination="Oca-hH-1Lq" kind="push" id="yEE-0u-bei"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon_currentLocation.png" id="F0Q-W2-q4o">
@@ -301,12 +371,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="XrX-w1-kvx" kind="relationship" relationship="rootViewController" id="nej-Bh-YK6"/>
+                        <segue destination="KGZ-l8-KWL" kind="relationship" relationship="rootViewController" id="U7l-QL-czM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DK-Fl-yeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1652" y="-103"/>
+            <point key="canvasLocation" x="-3008" y="-75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5">
@@ -412,6 +482,12 @@
                 <relationship kind="outlet" name="locationManager" candidateClass="CLLocationManager"/>
             </relationships>
         </class>
+        <class className="MILogoutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MILogoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logout:"/>
+            </relationships>
+        </class>
         <class className="MIMapDataViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MIMapDataViewController.h"/>
             <relationships>
@@ -424,7 +500,9 @@
         <class className="MISettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MISettingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="facebooklogin:"/>
                 <relationship kind="action" name="signIN:"/>
+                <relationship kind="action" name="twitterlogin:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="userField" candidateClass="UITextField"/>
@@ -433,6 +511,7 @@
         <class className="MISignUPViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MISignUPViewController.h"/>
             <relationships>
+                <relationship kind="action" name="signUP:"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
@@ -457,4 +536,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Ax-r8-tCV"/>
+    </inferredMetricsTieBreakers>
 </document>

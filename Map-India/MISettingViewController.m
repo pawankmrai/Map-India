@@ -160,7 +160,8 @@
             if (user) {
                 if ([[user objectForKey:@"emailVerified"] boolValue]==1) {
                     
-                    [self.navigationController popViewControllerAnimated:YES];
+                    //[self.navigationController popViewControllerAnimated:YES];
+                    [self performSegueWithIdentifier:@"loginsuccessfull" sender:user];
                     
                 }
                 else{
@@ -193,7 +194,44 @@
         }];        
     
     
-	}
+}
+///////////facebook login area////////////////////
+- (IBAction)facebooklogin:(id)sender {
+   
+    NSArray *permissions=[NSArray arrayWithObjects:@"email",
+                                                   nil];
+    
+    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else {
+            NSLog(@"User logged in through Facebook!");
+        }
+    }];
+}
+
+
+//////////////////////////////////////////////////
+
+///////////////twitter login area//////////////////
+- (IBAction)twitterlogin:(id)sender {
+
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+        } else {
+            NSLog(@"User logged in with Twitter!");
+        }    
+    }];
+}
+
+
+////////////////////////////////////////////////////
 
 - (void)viewDidUnload
 {
