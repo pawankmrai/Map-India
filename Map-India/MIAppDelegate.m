@@ -47,6 +47,8 @@
     //////////////checking for user in cached memory////////////////
     PFUser *user=[PFUser currentUser];
     if (user) {
+        //// link this account with existing user account if not
+        
         NSLog(@"user log in!!!!");
     }
     else{
@@ -110,6 +112,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [PF_FBSettings publishInstall:@"246113772189085"];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

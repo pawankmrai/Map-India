@@ -52,7 +52,8 @@
     [userField resignFirstResponder];
 	[passwordField resignFirstResponder];
     
-	[self processFieldEntries];
+    [self performSegueWithIdentifier:@"loginsuccessfull" sender:sender];
+	//[self processFieldEntries];
 }
 #pragma mark - UITextField text field change notifications and helper methods
 
@@ -198,18 +199,30 @@
 ///////////facebook login area////////////////////
 - (IBAction)facebooklogin:(id)sender {
    
+    
+       
     NSArray *permissions=[NSArray arrayWithObjects:@"email",
+                                                   @"user_about_me",
+                                                   @"user_relationships",
+                                                   @"user_birthday",
+                                                   @"user_location",
+                                                   @"user_work_history",
                                                    nil];
     
     [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
+            NSLog(@"User signed up and logged in through Facebook!");            
+            [self performSegueWithIdentifier:@"loginsuccessfull" sender:sender];
         } else {
+            
             NSLog(@"User logged in through Facebook!");
+            [self performSegueWithIdentifier:@"loginsuccessfull" sender:sender];
+            
         }
     }];
+  
 }
 
 
